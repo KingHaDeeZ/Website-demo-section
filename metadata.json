@@ -1,0 +1,8 @@
+{
+  "name": "TechStack Sydney — Industry Website Previews",
+  "description": "Single-section industry website mock showcase matching TechStack Sydney's UI across all viewports with full-site preview launch in a separate window.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

@@ -1,0 +1,128 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  color-scheme: light;
+  --bg-canvas: #f8f9fb;
+  --bg-surface: #ffffff;
+  --bg-surface-alt: #f3f5fa;
+  --bg-mock: #eef2f6;
+  --bg-header: rgba(255, 255, 255, 0.88);
+  --bg-mega: rgba(255, 255, 255, 0.97);
+  --ink-primary: #0d1524;
+  --ink-secondary: #4b5565;
+  --ink-muted: #475569;
+  --border-subtle: #e4e8ef;
+  --border-mock: #dde5f1;
+  --border-input: #cbd5e1;
+  --border-hover: #c7d2fe;
+  --border-apex: rgba(79, 70, 229, 0.35);
+  --accent-indigo: #4f46e5;
+  --accent-indigo-deep: #4338ca;
+  --accent-indigo-ink: #4338ca;
+  --accent-violet: #7c3aed;
+  --accent-blue-ink: #176083;
+  --accent-blue: #39a6de;
+  --accent-emerald: #047857;
+  --accent-emerald-soft: rgba(5, 150, 105, 0.1);
+  --glow-left: rgba(147, 51, 234, 0.11);
+  --glow-right: rgba(59, 130, 246, 0.12);
+  --dot-grid: rgba(79, 70, 229, 0.14);
+  --slider-track-bg: #eef2f6;
+  --slider-thumb-bg: #ffffff;
+  --slider-thumb-border: #dde5f1;
+  --slider-thumb-shadow: 0 1px 3px rgba(13, 21, 36, 0.1);
+  --shadow-card: 0 1px 3px rgba(13, 21, 36, 0.05), 0 12px 30px -12px rgba(13, 21, 36, 0.08);
+  --shadow-card-hover: 0 4px 12px rgba(13, 21, 36, 0.07), 0 20px 38px -12px rgba(79, 70, 229, 0.14);
+  --shadow-header: 0 10px 28px -14px rgba(13, 21, 36, 0.12);
+  --shadow-mega: 0 24px 48px -18px rgba(13, 21, 36, 0.14);
+  --shadow-cta: 0 10px 24px -10px rgba(79, 70, 229, 0.52);
+  --font-heading: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-sans: "DM Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+
+html.dark,
+html[data-theme="dark"] {
+  color-scheme: dark;
+  --bg-canvas: #090d16;
+  --bg-surface: #111827;
+  --bg-surface-alt: #0d1320;
+  --bg-mock: #162033;
+  --bg-header: rgba(9, 13, 22, 0.86);
+  --bg-mega: rgba(13, 19, 32, 0.97);
+  --ink-primary: #f1f5f9;
+  --ink-secondary: #cbd5e1;
+  --ink-muted: #94a3b8;
+  --border-subtle: #1e293b;
+  --border-mock: #28354b;
+  --border-input: #475569;
+  --border-hover: rgba(129, 140, 248, 0.5);
+  --border-apex: rgba(129, 140, 248, 0.45);
+  --accent-indigo: #6366f1;
+  --accent-indigo-deep: #818cf8;
+  --accent-indigo-ink: #a5b4fc;
+  --accent-violet: #a78bfa;
+  --accent-blue-ink: #7dd3fc;
+  --accent-blue: #38bdf8;
+  --accent-emerald: #34d399;
+  --accent-emerald-soft: rgba(16, 185, 129, 0.16);
+  --glow-left: rgba(147, 51, 234, 0.18);
+  --glow-right: rgba(56, 189, 248, 0.14);
+  --dot-grid: rgba(129, 140, 248, 0.14);
+  --slider-track-bg: #162033;
+  --slider-thumb-bg: #24314a;
+  --slider-thumb-border: rgba(148, 163, 184, 0.28);
+  --slider-thumb-shadow: 0 2px 6px rgba(0, 0, 0, 0.45);
+  --shadow-card: 0 1px 3px rgba(0, 0, 0, 0.38), 0 12px 30px -12px rgba(0, 0, 0, 0.6);
+  --shadow-card-hover: 0 8px 26px rgba(0, 0, 0, 0.55), 0 12px 32px -12px rgba(99, 102, 241, 0.25);
+  --shadow-header: 0 14px 32px -14px rgba(0, 0, 0, 0.56);
+  --shadow-mega: 0 24px 48px -18px rgba(0, 0, 0, 0.65);
+  --shadow-cta: 0 10px 26px -10px rgba(99, 102, 241, 0.6);
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background-color: var(--bg-canvas);
+  color: var(--ink-primary);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: clip;
+  transition: background-color 0.22s ease, color 0.22s ease;
+}
+
+.tss-heading {
+  font-family: var(--font-heading);
+}
+
+.tss-mono {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+}
+
+.tss-ambient-section {
+  background:
+    radial-gradient(760px 420px at 14% 6%, var(--glow-left), transparent 70%),
+    radial-gradient(820px 440px at 88% 8%, var(--glow-right), transparent 72%),
+    var(--bg-canvas);
+}
+
+.tss-dot-backdrop {
+  background-image: radial-gradient(var(--dot-grid) 1px, transparent 1px);
+  background-size: 22px 22px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *, *::before, *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}
